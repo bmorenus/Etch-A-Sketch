@@ -1,34 +1,34 @@
 class Sketch {
 
-    constructor(boxRow = 8, boxCol = 8) {
-        this.width = 760;
-        this.height = 800;
+    constructor(xBoxes = 300, yBoxes = 300) {
+        this.width = document.getElementById('sketch-box').getBoundingClientRect().width;
+        this.height = document.getElementById('sketch-box').getBoundingClientRect().height;
+        this.xBoxes = xBoxes;
+        this.yBoxes = yBoxes;
         this.boxColor = "red";
     }
 
     
-    drawSketch(colorValue = this.boxColor) {
-        const sketchID = document.getElementById("sketch-canvas");
-        const sketchBox = sketchID.getContext("2d");
-        sketchBox.fillStyle = colorValue;
-        sketchBox.fillRect(0, 0, this.width, this.height);
-    }
-        /*
-        this.sketchBox.clearRect(0, 0, this.width, this.height);
-        const pixelPerBox = Math.floor(this.width / this.boxCol)
-        for (let i = 0; i < this.boxRow; i++) {
-            for (let j = 0; j < this.boxCol; j++) {
-
-            }
+    drawSketch(xBoxes = this.xBoxes, yBoxes = this.yBoxes, colorValue = this.boxColor) {
+        const sketchBox = document.getElementById("sketch-box");
+        const boxSize = (this.width / this.xBoxes);
+        for (let i = 0; i < xBoxes; i++) {
+            let divContainer = document.createElement("div");
+            sketchBox.appendChild(divContainer);
+            for (let j = 0; j < yBoxes; j++) {
+                let box = document.createElement("div");
+                box.style.height = `${boxSize}px`
+                box.style.width = `${boxSize}px`
+                divContainer.appendChild(box);
+            }   
         }
-
-    
-    */
+    }
+    draw
 }
 
-function loadSketch() {
+function run() {
     sketch = new Sketch();
-    sketch.drawSketch("red");
+    sketch.drawSketch();
 }
 
-loadSketch();
+run();

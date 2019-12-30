@@ -28,7 +28,7 @@ header{
 
 nav{
     background-color: #CBB9A8;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid black;
     grid-area: nav;
 }
 
@@ -58,20 +58,25 @@ main{
 }
 
 #sketch-box{
-    padding: 5px 5px 5px 5px;
-
     height: 700px;
-    width: 960px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#sketch-canvas{
-    height: 700px;
-    width: 960px;
+#sketch-box div div{
+    background-color: white;
 }
+
+#sketch-box div div:hover{
+    background-color: black;
+}
+
 
 footer{
     background-color: #CBB9A8;
-    border-top: 3px solid white;
+    border-top: 3px solid black;
     border-bottom: 3px solid white;
     height: 40px;
     grid-area: footer;
