@@ -50,20 +50,23 @@ nav ul li:hover{
 
 
 main{
-    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1C5168;
+    grid-area: main;
 }
 
 #sketch-box{
-    border: 2px;
-    border-color: black;
-    height: 760px;
-    width: 760px;
+    padding: 5px 5px 5px 5px;
+
+    height: 700px;
+    width: 960px;
 }
 
-#sketch-box div{
-    border: 1px;
-    border-color: black;
+#sketch-canvas{
+    height: 700px;
+    width: 960px;
 }
 
 footer{
