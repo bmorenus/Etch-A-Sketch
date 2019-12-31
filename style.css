@@ -1,5 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #B42424;
     margin: 0 0 0 0;
 }
 
@@ -15,20 +16,21 @@ body{
 }
 
 header{
-    background-color: #1C5168;
+    background-color: #B42424;
     color: white;
     border-bottom: 3px solid white;
-    padding-top: 10px;
-    padding-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-area: header;
+    font-size: 36px;
+    height: 100px;
 }
 
 nav{
     background-color: #CBB9A8;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
+    margin-bottom: 10px;
     grid-area: nav;
 }
 
@@ -53,7 +55,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1C5168;
+    background-color: #B42424;
     grid-area: main;
 }
 
@@ -77,8 +79,9 @@ main{
 
 footer{
     background-color: #CBB9A8;
-    border-top: 3px solid black;
+    border-top: 3px solid white;
     border-bottom: 3px solid white;
-    height: 40px;
+    margin-top: 10px;
+    height: 45px;
     grid-area: footer;
 }
