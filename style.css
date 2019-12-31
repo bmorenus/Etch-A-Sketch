@@ -67,6 +67,7 @@ main{
 
 #sketch-box div div{
     background-color: white;
+    border: 1px solid black;
 }
 
 #sketch-box div div:hover{
