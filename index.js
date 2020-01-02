@@ -1,19 +1,22 @@
 class Sketch {
 
-    constructor(numBoxes = 10) {
+    constructor() {
         this.length = document.getElementById('sketch-box').getBoundingClientRect().width;
         this.sketchBox = document.getElementById("sketch-box");
-        this.eraseButton = document.getElementById("erase-sketch")
-        this.numBoxes = numBoxes;
-        this.sketchPixels;
+        this.newGridButton = document.getElementById("new-grid-button");
+        this.newGridButton.addEventListener('click', this.generateNewSketch, false);
+        this.eraseButton = document.getElementById("erase-sketch");
+        this.sketchPixels = document.getElementsByClassName("sketch-box-pixel");
+        this.sketchBox = document.getElementById("sketch-box");
+        this.sketchPixels = document.getElementsByClassName("sketch-box-pixel");
     }
 
-    loadSketch() {
-        const boxSize = (this.length / this.numBoxes) - 2;
-        for (let i = 0; i < this.numBoxes; i++) {
+    loadSketch(numBoxes = 10) {
+        const boxSize = (this.length / numBoxes) - 2;
+        for (let i = 0; i < numBoxes; i++) {
             let divContainer = document.createElement("div");
             this.sketchBox.appendChild(divContainer);
-            for (let j = 0; j < this.numBoxes; j++) {
+            for (let j = 0; j < numBoxes; j++) {
                 let box = document.createElement("div");
                 box.className = "sketch-box-pixel"; 
                 box.style.height = `${boxSize}px`;
@@ -30,14 +33,17 @@ class Sketch {
     }
 
     eraseSketch() {
-        this.sketchPixels = document.getElementsByClassName("sketch-box-pixel");
-        for (let i = 0; i < this.sketchPixels.length; i++) {
-            this.sketchPixels[i].style.backgroundColor = "white";
+        for (let i = 0; i < sketch.sketchPixels.length; i++) {
+            sketch.sketchPixels[i].style.backgroundColor = "white";
         }
     }
 
     generateNewSketch() {
-
+        let numBoxes = document.getElementById("grid-number").value;
+        while (sketch.sketchBox.hasChildNodes()){
+            sketch.sketchBox.removeChild(sketch.sketchBox.firstChild);
+        }
+        sketch.loadSketch(numBoxes)
     }
 }
 
