@@ -1,6 +1,6 @@
 class Sketch {
 
-    constructor(numBoxes = 100) {
+    constructor(numBoxes = 10) {
         this.length = document.getElementById('sketch-box').getBoundingClientRect().width;
         this.sketchBox = document.getElementById("sketch-box");
         this.eraseButton = document.getElementById("erase-sketch")
@@ -34,6 +34,10 @@ class Sketch {
         for (let i = 0; i < this.sketchPixels.length; i++) {
             this.sketchPixels[i].style.backgroundColor = "white";
         }
+    }
+
+    generateNewSketch() {
+
     }
 }
 

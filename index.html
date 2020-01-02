@@ -19,18 +19,26 @@
     <div id="container">
         <header>
             <h1>Etch-A-Sketch!</h1>
+            <div class="separator"></div>
         </header>
-        <nav>
-            <ul>
-                <li id="new-sketch">Create New Grid</li>
-                <li id="erase-sketch">Erase Current Grid</li>
-                <li id="change-sketch-color">Change Color</li>
-            </ul>
-        </nav>
         <main>
+            <aside>
+                <div id="new-sketch">
+                    <p class="aside-title">Create New Grid</p>
+                    <input type="number">
+                    <p>Max Input: 400</p>
+                    <button>Submit</button>
+                </div>
+                <div id="erase-sketch">
+                    <p class="aside-title">Erase Current Grid</p>
+                </div>
+                <div id="change-sketch-color">
+                    <p class="aside-title">Change Color</p>
+                </div>
+            </aside>
             <div id="sketch-box"></div>
         </main>
-        <footer>
+        <footer class="separator">
 
         </footer>
     </div>
