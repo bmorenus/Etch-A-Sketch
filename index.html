@@ -29,12 +29,16 @@
                     <p>Max Input: 200</p>
                     <button id="new-grid-button">Submit</button>
                 </div>
+
                 <div id="erase-sketch">
                     <p class="aside-title">Erase Current Grid</p>
                 </div>
+
                 <div id="change-sketch-color">
                     <p class="aside-title">Change Color</p>
+                    <input class="jscolor {onFineChange:'sketch.colorSketch(this)'}" value="cc66ff">
                 </div>
+               
             </aside>
             <div id="sketch-box"></div>
         </main>
@@ -43,6 +47,7 @@
         </footer>
     </div>
     <script src="index.js"></script>
+    <script src="jscolor.js"></script>
 </body>
 
 </html>

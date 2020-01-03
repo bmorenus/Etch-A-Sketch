@@ -9,6 +9,7 @@ class Sketch {
         this.sketchPixels = document.getElementsByClassName("sketch-box-pixel");
         this.sketchBox = document.getElementById("sketch-box");
         this.sketchPixels = document.getElementsByClassName("sketch-box-pixel");
+        this.boxColor = "black";
     }
 
     loadSketch(numBoxes = 10) {
@@ -29,7 +30,7 @@ class Sketch {
     }
     
     drawSketch(event) { 
-        event.target.style.background = "red";
+        event.target.style.background = sketch.boxColor;
     }
 
     eraseSketch() {
@@ -40,16 +41,34 @@ class Sketch {
 
     generateNewSketch() {
         let numBoxes = document.getElementById("grid-number").value;
+        if (numBoxes > 200) {
+            return;
+        }
         while (sketch.sketchBox.hasChildNodes()){
             sketch.sketchBox.removeChild(sketch.sketchBox.firstChild);
         }
         sketch.loadSketch(numBoxes)
+    }
+
+    colorSketch(color) {
+        sketch.boxColor = '#' + color;
+        for (let i = 0; i < sketch.sketchPixels.length; i++) {
+            if (sketch.sketchPixels[i].style.backgroundColor != ''){
+                console
+                sketch.sketchPixels[i].style.backgroundColor = sketch.boxColor;
+            }
+        }
     }
 }
 
 function main() {
     sketch = new Sketch();
     sketch.loadSketch();
+}
+
+function update(jscolor) {
+    // 'jscolor' instance can be used as a string
+    document.getElementById('rect').style.backgroundColor = '#' + jscolor;
 }
 
 main();
