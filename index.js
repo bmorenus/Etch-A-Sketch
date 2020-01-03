@@ -35,7 +35,7 @@ class Sketch {
 
     eraseSketch() {
         for (let i = 0; i < sketch.sketchPixels.length; i++) {
-            sketch.sketchPixels[i].style.backgroundColor = "white";
+            sketch.sketchPixels[i].style.backgroundColor = '';
         }
     }
 
